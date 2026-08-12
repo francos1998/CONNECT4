@@ -1,0 +1,16 @@
+services:
+  uplink_1:
+    build: .
+    container_name: anvil-uplink-1
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      ANVIL_UPLINK_KEY: "${ANVIL_UPLINK_KEY_1}"
+
+  uplink_2:
+    image: anvil-uplink
+    container_name: anvil-uplink-2
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      ANVIL_UPLINK_KEY: "${ANVIL_UPLINK_KEY_2}"
