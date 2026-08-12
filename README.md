@@ -1,6 +1,6 @@
 # Connect 4 AI Arena
 
-An AI-powered Connect 4 platform built in two stages: first a full-stack system that generates its own training data and deploys trained models as live opponents, then a reinforcement learning phase that improves on the strongest model from Stage 1 through self-play.
+Two separate academic projects exploring AI approaches to Connect 4: a full-stack system that generates its own training data and deploys trained models as live opponents, and a reinforcement learning investigation into whether self-play can improve on a strong supervised CNN. The two stages used different teams and different baseline models — see each stage's README for details on how (and whether) they connect.
 
 ## Stages
 
@@ -9,8 +9,10 @@ Generates a training dataset from scratch via Monte Carlo Tree Search (MCTS) sel
 
 **Team:** Nikhil Kumar, Franco Salinas, Muzaffar Yezdan, Justin Yang — MSBA, McCombs School of Business
 
-### Stage 2 — Reinforcement Learning *(coming soon)*
-Takes the best Stage 1 CNN as a starting policy and improves it further using self-play and policy gradient (REINFORCE) training.
+### [Stage 2 — Reinforcement Learning](./stage-2-reinforcement-learning)
+A business-framed investigation comparing Policy Gradient (REINFORCE) and Double DQN self-play training against a supervised CNN baseline, evaluated head-to-head and against MCTS at four difficulty levels. Note: this stage fine-tunes a separate, more advanced CNN built for this project — not the exact model deployed in Stage 1 (see that stage's README for the full explanation).
+
+**Team:** Bhagya Puppala, Franco Salinas, Frank Rong, Hank Liu — MSBA, McCombs School of Business (Optimization II, Project 3)
 
 ## Repository Structure
 
@@ -20,5 +22,7 @@ connect4-ai-arena/
 │   ├── notebooks/       # MCTS data generation, CNN training, Transformer training
 │   ├── deployment/       # Docker + Anvil Uplink backend, trained models
 │   └── docs/             # Project write-up and gameplay screenshots
-└── stage-2-reinforcement-learning/   # (in progress)
+└── stage-2-reinforcement-learning/
+    ├── notebooks/        # Policy Gradient + DQN training and evaluation
+    └── docs/             # Project write-up
 ```
